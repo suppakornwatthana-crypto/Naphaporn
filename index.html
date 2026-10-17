@@ -163,7 +163,17 @@ dl div{grid-template-columns:6rem 1fr}.sec{padding-top:70px}
 .sec>.rv:first-child{text-align:center}.sec>.rv:first-child .sub{margin-left:auto;margin-right:auto}
 .sh2{text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:10px;text-decoration-color:var(--gold)}
 .eb{color:var(--red)}
-.fam{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}.mo{position:absolute;right:10px;bottom:10px;background:rgba(74,11,16,.85);color:#e8c36a;font-size:.8rem;padding:3px 10px;border-radius:99px}.th{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.th button{width:64px;height:64px;padding:0;border:2px solid transparent;border-radius:12px;overflow:hidden;cursor:pointer;background:none;opacity:.7}.th button.on{border-color:#b8934a;opacity:1}.th img{width:100%;height:100%;object-fit:cover;display:block}.fl{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:22px}.fl button{border:1px solid #d9c9a6;background:#fff;color:#4a0b10;border-radius:99px;padding:9px 18px;font:inherit;font-size:.95rem;cursor:pointer;min-height:44px}.fl button.on{background:#4a0b10;color:#e8c36a;border-color:#4a0b10}.p h3{font-size:1.1rem;line-height:1.35;min-height:3em;display:flex;align-items:center;justify-content:center}.p .pr{color:#8a1c24;font-size:1.25rem}
+.fam{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+/* hero floating photo layers (parallax) */
+.fl3{position:absolute;inset:0;pointer-events:none;perspective:900px}
+.fl3 .L{position:absolute;will-change:transform}
+.fl3 .L>div{width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:3px solid #e8c36a;box-shadow:0 28px 50px -14px rgba(0,0,0,.6),0 0 0 8px rgba(232,195,106,.14);animation:flo 7s ease-in-out infinite}
+.fl3 .L img{width:100%;height:100%;object-fit:cover;display:block}
+.fl3 .L.far>div{filter:blur(1.6px) brightness(.8);border-width:2px}
+@keyframes flo{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media(prefers-reduced-motion:reduce){.fl3 .L>div{animation:none}}
+@media(max-width:600px){.fl3 .L>div{border-width:2px;box-shadow:0 14px 26px -10px rgba(0,0,0,.6)}}
+.mo{position:absolute;right:10px;bottom:10px;background:rgba(74,11,16,.85);color:#e8c36a;font-size:.8rem;padding:3px 10px;border-radius:99px}.th{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.th button{width:64px;height:64px;padding:0;border:2px solid transparent;border-radius:12px;overflow:hidden;cursor:pointer;background:none;opacity:.7}.th button.on{border-color:#b8934a;opacity:1}.th img{width:100%;height:100%;object-fit:cover;display:block}.fl{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:22px}.fl button{border:1px solid #d9c9a6;background:#fff;color:#4a0b10;border-radius:99px;padding:9px 18px;font:inherit;font-size:.95rem;cursor:pointer;min-height:44px}.fl button.on{background:#4a0b10;color:#e8c36a;border-color:#4a0b10}.p h3{font-size:1.1rem;line-height:1.35;min-height:3em;display:flex;align-items:center;justify-content:center}.p .pr{color:#8a1c24;font-size:1.25rem}
 .p{background:#fff;border:1px solid #eadfcc;padding:12px 12px 24px;border-radius:30px}
 .p .im{border-radius:22px;margin-bottom:18px}
 .p .pill{background:var(--mar);color:#fff;border-color:var(--mar)}.p .pill:hover{background:var(--red)}
@@ -192,7 +202,7 @@ footer{background:var(--mar);color:#d9c3a0}footer img{background:#fff}
 <div class="bt"><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;destination=13.7419631,100.5089905" target="_blank" rel="noopener" data-cta="hero_dir">นำทางไปร้าน</a><a class="pill out" href="#story">อ่านเรื่องราวของเรา</a></div>
 <div class="chips"><div><b data-n="4.9" data-d="1" data-rate>4.9</b><span>คะแนน Google Maps</span></div><div><b data-n="132" data-reviews>132</b><span>รีวิวจากลูกค้า</span></div><div><b style="font-size:clamp(.9rem,1.1vw,1.05rem);line-height:1.35;white-space:nowrap">ทุกวัน<br>07:00 – 16:00 น.</b><span>เวลาเปิดร้าน</span></div><div><b style="font-size:clamp(1rem,1.6vw,1.3rem);white-space:nowrap">เยาวราช</b><span>ซอยเจริญกรุง 16</span></div></div>
 </div>
-<div class="v3 rv" id="v3"><canvas id="c0" aria-label="โลโก้ร้านนภาพรแบบ 3 มิติ ลากเพื่อหมุน"></canvas><div class="shd"></div><div class="fb"><img data-logo alt=""></div><div class="hint">ลากเพื่อหมุนโลโก้ · 3D</div></div>
+<div class="v3 rv" id="v3"><canvas id="c0" aria-label="โลโก้ร้านนภาพรแบบ 3 มิติ ลากเพื่อหมุน"></canvas><div class="shd"></div><div class="fb"><img data-logo alt=""></div><div class="hint">ลากเพื่อหมุนโลโก้ · 3D</div><div class="fl3" aria-hidden="true"></div></div>
 </div></section>
 <section class="sec" id="story">
 <div class="rv cen"><div class="eb">เรื่องราวของเรา</div><h2 class="sh2">ร้านนภาพร</h2></div>
@@ -390,6 +400,21 @@ var LOGO3D=function(canvas,src){
 /* hero viewer */
 var HV=null;try{HV=LOGO3D($('c0'),OG)}catch(e){HV=null}
 if(!HV){var v3=$('v3');v3.querySelector('.fb').style.display='grid';$('c0').style.display='none';Q('#v3 .shd,#v3 .hint').forEach(function(e){e.style.display='none'})}
+
+/* hero parallax photo layers */
+(function(){var box=document.querySelector('.fl3');if(!box)return;
+ var cfg=[['p3',-4,-2,30,.9,'',1.2],['p2',76,6,25,.7,'',.9],['p4',70,66,31,1,'',1.4]],els=[];
+ cfg.forEach(function(c,i){var d=document.createElement('div');d.className='L '+c[5];d.style.cssText='left:'+c[1]+'%;top:'+c[2]+'%;width:'+c[3]+'%;z-index:'+(c[5]?0:3);
+  d.innerHTML='<div style="animation-delay:'+(-i*1.7)+'s"><img src="'+PH[c[0]]+'" alt=""></div>';box.appendChild(d);els.push({e:d,k:c[4],t:c[6]})});
+ var tx=0,ty=0,cx=0,cy=0,vis=true,raf=0,hero=document.querySelector('.hero');
+ if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*2;ty=((e.clientY-r.top)/r.height-.5)*2});
+ hero.addEventListener('pointerleave',function(){tx=0;ty=0});
+ new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!raf)raf=requestAnimationFrame(tick)}).observe(hero);
+ function tick(){raf=0;if(!vis)return;cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;var sy=Math.min(window.scrollY,800);
+  els.forEach(function(o){var x=-cx*o.k*26,y=-cy*o.k*20-sy*o.k*.12;o.e.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0) rotateY('+(cx*o.t*10).toFixed(1)+'deg) rotateX('+(-cy*o.t*8).toFixed(1)+'deg)'});
+  raf=requestAnimationFrame(tick)}
+ raf=requestAnimationFrame(tick)})();
 /* status */
 function status(){var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bangkok',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),h=0,m=0;p.forEach(function(x){if(x.type==='hour')h=+x.value%24;if(x.type==='minute')m=+x.value});var t=h*60+m,o=t>=420&&t<960,a=o?'เปิดอยู่ตอนนี้ · ปิด 16:00 น.':t<420?'ปิดอยู่ · เปิด 07:00 น. วันนี้':'ปิดอยู่ · เปิดพรุ่งนี้ 07:00 น.';Q('.st').forEach(function(e){e.textContent=a});Q('.stt').forEach(function(e){e.textContent=o?'เปิดอยู่ตอนนี้':'ปิดอยู่ตอนนี้'});Q('.sts').forEach(function(e){e.textContent=a+' · เวลาอาจเปลี่ยนในวันหยุดพิเศษ'});Q('.dot').forEach(function(e){e.classList.toggle('on',o)})}status();
 /* products */
