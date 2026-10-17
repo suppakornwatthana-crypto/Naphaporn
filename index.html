@@ -163,7 +163,7 @@ dl div{grid-template-columns:6rem 1fr}.sec{padding-top:70px}
 .sec>.rv:first-child{text-align:center}.sec>.rv:first-child .sub{margin-left:auto;margin-right:auto}
 .sh2{text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:10px;text-decoration-color:var(--gold)}
 .eb{color:var(--red)}
-.fam{grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.fam{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}.fl{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:22px}.fl button{border:1px solid #d9c9a6;background:#fff;color:#4a0b10;border-radius:99px;padding:9px 18px;font:inherit;font-size:.95rem;cursor:pointer;min-height:44px}.fl button.on{background:#4a0b10;color:#e8c36a;border-color:#4a0b10}.p h3{font-size:1.1rem;line-height:1.35;min-height:3em;display:flex;align-items:center;justify-content:center}.p .pr{color:#8a1c24;font-size:1.25rem}
 .p{background:#fff;border:1px solid #eadfcc;padding:12px 12px 24px;border-radius:30px}
 .p .im{border-radius:22px;margin-bottom:18px}
 .p .pill{background:var(--mar);color:#fff;border-color:var(--mar)}.p .pill:hover{background:var(--red)}
@@ -205,6 +205,7 @@ footer{background:var(--mar);color:#d9c3a0}footer img{background:#fff}
 
 <section class="sec" id="menu">
 <div class="rv"><div class="eb">เมนูที่ร้าน</div><h2 class="sh2">เมนูทั้งหมด</h2><p class="sub">แตะเมนูเพื่อดูรายละเอียด คุณภาพสินค้า และราคา</p></div>
+<div class="fl rv"><button class="on" data-f="ทั้งหมด">ทั้งหมด</button><button data-f="ติ่มซำ">ติ่มซำ</button><button data-f="ของทอด">ของทอด</button><button data-f="ขนมและน้ำจิ้ม">ขนม &amp; น้ำจิ้ม</button></div>
 <div class="fam rv" id="fam"></div></section>
 
 <section class="sec" id="loc">
@@ -407,9 +408,17 @@ var PROD=[
 {n:'บะจ่าง',t:'ข้าวเหนียวห่อใบ',pr:'สอบถามราคาที่ร้าน',k:'บะจ่าง',im:null,q:['ข้าวเหนียวห่อใบ ตำรับจีนแต้จิ๋ว','สอบถามไส้และราคาได้ที่ร้าน']},
 {n:'น้ำจิ้มบ๊วย',t:'โฮมเมด เปรี้ยวหวาน',pr:'สอบถามราคาที่ร้าน',k:'น้ำจิ้ม',im:null,q:['น้ำจิ้มบ๊วยโฮมเมดของร้าน','ทานคู่ของทอดและติ่มซำ']}
 ];
+/* flatten: every size/variant becomes its own product */
+(function(){var out=[];PROD.forEach(function(p){
+ if(p.vars){p.vars.forEach(function(v){out.push({n:v.n,pr:v.pr,k:p.k,im:v.im||null,q:v.q||[],g:p.n==='ขนมจีบ'?'ติ่มซำ':'ของทอด'})});}
+ else if(p.v){p.v.forEach(function(x){out.push({n:p.n+' ('+x[0]+')',pr:x[1],k:p.k,im:p.im||null,q:p.q||[],g:'ของทอด'})});}
+ else out.push({n:p.n,pr:p.pr,k:p.k,im:p.im||null,q:p.q||[],g:p.k==='ของทอด'?'ของทอด':'ขนมและน้ำจิ้ม'});});
+ PROD=out})();
 var fam=$('fam'),mod=$('mod'),sh=$('sheet'),last=null,cv=null;
-PROD.forEach(function(p,i){var d=document.createElement('div');d.className='p';var ims=p.vars?p.vars.filter(function(v){return v.im}).map(function(v){return v.im}):(p.im?[p.im]:[]);
- d.innerHTML='<div class="im'+(ims.length>1?' two':'')+'">'+(ims.length?ims.map(function(k){return '<img src="'+PH[k]+'" alt="'+p.n+'">'}).join(''):'興')+'</div><h3>'+p.n+'</h3><div class="tg">'+p.t+'</div><div class="pr">'+p.pr+'</div><button class="pill sm out" data-p="'+i+'">ดูรายละเอียด</button><div class="av">มีจำหน่ายที่ร้าน</div>';fam.appendChild(d)});
+function render(g){fam.innerHTML='';PROD.forEach(function(p,i){if(g&&g!=='ทั้งหมด'&&p.g!==g)return;var d=document.createElement('div');d.className='p';
+ d.innerHTML='<div class="im">'+(p.im?'<img src="'+PH[p.im]+'" alt="'+p.n+'" loading="lazy">':'興')+'</div><h3>'+p.n+'</h3><div class="pr">'+p.pr+'</div><button class="pill sm out" data-p="'+i+'">ดูรายละเอียด</button>';fam.appendChild(d)})}
+render();
+document.addEventListener('click',function(e){var f=e.target.closest('[data-f]');if(f){Q('.fl button').forEach(function(x){x.classList.toggle('on',x===f)});render(f.dataset.f)}});
 function show(h,t){last=t||document.activeElement;sh.innerHTML='<button class="x" id="cx" aria-label="ปิด">×</button><div class="sh">'+h+'</div>';mod.classList.add('open');document.body.classList.add('lock');sh.scrollTop=0;$('cx').focus({preventScroll:true})}
 function closeM(){mod.classList.remove('open');document.body.classList.remove('lock');if(cv){cv.dispose();cv=null}if(last&&last.focus)last.focus({preventScroll:true})}
 var curP=null;
