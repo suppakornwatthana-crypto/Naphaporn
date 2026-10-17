@@ -163,7 +163,7 @@ dl div{grid-template-columns:6rem 1fr}.sec{padding-top:70px}
 .sec>.rv:first-child{text-align:center}.sec>.rv:first-child .sub{margin-left:auto;margin-right:auto}
 .sh2{text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:10px;text-decoration-color:var(--gold)}
 .eb{color:var(--red)}
-.fam{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}.fl{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:22px}.fl button{border:1px solid #d9c9a6;background:#fff;color:#4a0b10;border-radius:99px;padding:9px 18px;font:inherit;font-size:.95rem;cursor:pointer;min-height:44px}.fl button.on{background:#4a0b10;color:#e8c36a;border-color:#4a0b10}.p h3{font-size:1.1rem;line-height:1.35;min-height:3em;display:flex;align-items:center;justify-content:center}.p .pr{color:#8a1c24;font-size:1.25rem}
+.fam{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}.mo{position:absolute;right:10px;bottom:10px;background:rgba(74,11,16,.85);color:#e8c36a;font-size:.8rem;padding:3px 10px;border-radius:99px}.th{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.th button{width:64px;height:64px;padding:0;border:2px solid transparent;border-radius:12px;overflow:hidden;cursor:pointer;background:none;opacity:.7}.th button.on{border-color:#b8934a;opacity:1}.th img{width:100%;height:100%;object-fit:cover;display:block}.fl{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:22px}.fl button{border:1px solid #d9c9a6;background:#fff;color:#4a0b10;border-radius:99px;padding:9px 18px;font:inherit;font-size:.95rem;cursor:pointer;min-height:44px}.fl button.on{background:#4a0b10;color:#e8c36a;border-color:#4a0b10}.p h3{font-size:1.1rem;line-height:1.35;min-height:3em;display:flex;align-items:center;justify-content:center}.p .pr{color:#8a1c24;font-size:1.25rem}
 .p{background:#fff;border:1px solid #eadfcc;padding:12px 12px 24px;border-radius:30px}
 .p .im{border-radius:22px;margin-bottom:18px}
 .p .pill{background:var(--mar);color:#fff;border-color:var(--mar)}.p .pill:hover{background:var(--red)}
@@ -402,21 +402,21 @@ var PROD=[
  {l:'จัมโบ้',n:'หอยจ้อปูก้อน จัมโบ้',pr:'฿200',q:[]},
  {l:'พรีเมียม',n:'หอยจ้อปูก้อน พรีเมียม',pr:'฿160',q:[]}]},
 {n:'หอยจ้อปูม้า',t:'หอยจ้อปูม้า',pr:'฿70',k:'ของทอด',q:[]},
-{n:'แฮกึ้นกุ้งล้วน',t:'ไส้กุ้งล้วน ห่อฟองเต้าหู้ ทอด',pr:'฿70 – ฿90',v:[['ใหญ่','฿90'],['กลาง','฿70']],k:'ของทอด',im:'p4',q:['ไส้กุ้งล้วน','ห่อแน่นด้วยฟองเต้าหู้ ทอดสีแดงทอง','ตัดชิ้นพอดีคำ เนื้อไส้แน่นเห็นชัด']},
-{n:'ทอดมันกุ้ง',t:'ลูกกลมกรอบสีทอง',pr:'฿200 – ฿400',v:[['ครึ่งกิโลกรัม','฿200'],['1 กิโลกรัม','฿400']],k:'ของทอด',im:'p3',q:['เกล็ดขนมปังเคลือบทั่วลูก สีทองสม่ำเสมอ','ลูกกลมขนาดเท่ากัน','กรอบนอก นุ่มในเนื้อกุ้ง']},
+{n:'แฮกึ้นกุ้งล้วน',t:'ไส้กุ้งล้วน ห่อฟองเต้าหู้ ทอด',pr:'฿70 – ฿90',v:[['แฮกึ้นกุ้งล้วนจัมโบ้','฿90'],['แฮกึ้นกุ้งล้วนพรีเมียม','฿70']],k:'ของทอด',im:'p4',q:['ไส้กุ้งล้วน','ห่อแน่นด้วยฟองเต้าหู้ ทอดสีแดงทอง','ตัดชิ้นพอดีคำ เนื้อไส้แน่นเห็นชัด']},
+{n:'ทอดมันกุ้งเนื้อกุ้งล้วน (ครึ่งกิโลกรัม)',t:'ลูกกลมกรอบสีทอง',pr:'฿200',k:'ของทอด',im:'p3',q:['เกล็ดขนมปังเคลือบทั่วลูก สีทองสม่ำเสมอ','ลูกกลมขนาดเท่ากัน','กรอบนอก นุ่มในเนื้อกุ้ง']},
 {n:'ทองม้วน',t:'ขนมทานเล่น',pr:'฿100',k:'ขนม',im:null,q:[]},
 {n:'บะจ่าง',t:'ข้าวเหนียวห่อใบ',pr:'สอบถามราคาที่ร้าน',k:'บะจ่าง',im:null,q:['ข้าวเหนียวห่อใบ ตำรับจีนแต้จิ๋ว','สอบถามไส้และราคาได้ที่ร้าน']},
 {n:'น้ำจิ้มบ๊วย',t:'โฮมเมด เปรี้ยวหวาน',pr:'สอบถามราคาที่ร้าน',k:'น้ำจิ้ม',im:null,q:['น้ำจิ้มบ๊วยโฮมเมดของร้าน','ทานคู่ของทอดและติ่มซำ']}
 ];
 /* flatten: every size/variant becomes its own product */
 (function(){var out=[];PROD.forEach(function(p){
- if(p.vars){p.vars.forEach(function(v){out.push({n:v.n,pr:v.pr,k:p.k,im:v.im||null,q:v.q||[],g:p.n==='ขนมจีบ'?'ติ่มซำ':'ของทอด'})});}
- else if(p.v){p.v.forEach(function(x){out.push({n:p.n+' ('+x[0]+')',pr:x[1],k:p.k,im:p.im||null,q:p.q||[],g:'ของทอด'})});}
- else out.push({n:p.n,pr:p.pr,k:p.k,im:p.im||null,q:p.q||[],g:p.k==='ของทอด'?'ของทอด':'ขนมและน้ำจิ้ม'});});
+ if(p.vars){p.vars.forEach(function(v){out.push({n:v.n,pr:v.pr,k:p.k,ims:v.im?[v.im]:[],q:v.q||[],g:p.n==='ขนมจีบ'?'ติ่มซำ':'ของทอด'})});}
+ else if(p.v){p.v.forEach(function(x){out.push({n:x[0],pr:x[1],k:p.k,ims:p.im?[p.im]:[],q:p.q||[],g:'ของทอด'})});}
+ else out.push({n:p.n,pr:p.pr,k:p.k,ims:p.im?[p.im]:[],q:p.q||[],g:p.k==='ของทอด'?'ของทอด':'ขนมและน้ำจิ้ม'});});
  PROD=out})();
 var fam=$('fam'),mod=$('mod'),sh=$('sheet'),last=null,cv=null;
 function render(g){fam.innerHTML='';PROD.forEach(function(p,i){if(g&&g!=='ทั้งหมด'&&p.g!==g)return;var d=document.createElement('div');d.className='p';
- d.innerHTML='<div class="im">'+(p.im?'<img src="'+PH[p.im]+'" alt="'+p.n+'" loading="lazy">':'興')+'</div><h3>'+p.n+'</h3><div class="pr">'+p.pr+'</div><button class="pill sm out" data-p="'+i+'">ดูรายละเอียด</button>';fam.appendChild(d)})}
+ d.innerHTML='<div class="im">'+(p.ims.length?'<img src="'+PH[p.ims[0]]+'" alt="'+p.n+'" loading="lazy">'+(p.ims.length>1?'<span class="mo">'+p.ims.length+' รูป</span>':''):'興')+'</div><h3>'+p.n+'</h3><div class="pr">'+p.pr+'</div><button class="pill sm out" data-p="'+i+'">ดูรายละเอียด</button>';fam.appendChild(d)})}
 render();
 document.addEventListener('click',function(e){var f=e.target.closest('[data-f]');if(f){Q('.fl button').forEach(function(x){x.classList.toggle('on',x===f)});render(f.dataset.f)}});
 function show(h,t){last=t||document.activeElement;sh.innerHTML='<button class="x" id="cx" aria-label="ปิด">×</button><div class="sh">'+h+'</div>';mod.classList.add('open');document.body.classList.add('lock');sh.scrollTop=0;$('cx').focus({preventScroll:true})}
@@ -424,12 +424,13 @@ function closeM(){mod.classList.remove('open');document.body.classList.remove('l
 var curP=null;
 function qhtml(q){return q.length?'<div class="q">คุณภาพสินค้า</div><ul>'+q.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>':'<div style="height:12px"></div>'}
 function prhtml(p){return p.v?'<div class="vr">'+p.v.map(function(x){return '<div><span>'+x[0]+'</span><b>'+x[1]+'</b></div>'}).join('')+'</div>':'<div class="pr">'+p.pr+'</div>'}
-function openProd(i,t){var p=PROD[i];curP=p;var v0=p.vars?p.vars[0]:p,hasIm=p.vars?p.vars.some(function(v){return v.im}):!!p.im;
- var imgs=p.vars?p.vars.map(function(v,k){return v.im?'<img class="ph" data-i="'+k+'" style="opacity:'+(k?0:1)+'" src="'+PH[v.im]+'" alt="'+v.n+'">':''}).join(''):(p.im?'<img class="ph" style="opacity:1" src="'+PH[p.im]+'" alt="'+p.n+'">':'');
- var sw=p.vars&&p.vars.length>1?'<div class="tg2">'+p.vars.map(function(v,k){return '<button'+(k?'':' class="on"')+' data-sw="'+k+'">'+v.l+'</button>'}).join('')+'</div>':'';
- show('<div class="pd"><div class="vw" id="vw">'+(hasIm?'':'<div class="nop">興</div>')+imgs+sw+'</div><div><div class="eb">'+p.k+'</div><h2 id="mt">'+(p.vars?v0.n:p.n)+'</h2><div id="mp">'+prhtml(p.vars?v0:p)+'</div><div id="mq">'+qhtml(v0.q)+'</div><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;destination=13.7419631,100.5089905" target="_blank" rel="noopener" data-cta="modal_dir">นำทางไปร้านนภาพร</a><p class="av" style="margin-top:14px">มีจำหน่ายที่ร้าน · เปิดทุกวัน 07:00 – 16:00 น.</p></div></div>',t)}
+function openProd(i,t){var p=PROD[i];curP=p;var hasIm=p.ims.length>0;
+ var imgs=p.ims.map(function(k,x){return '<img class="ph" data-i="'+x+'" style="opacity:'+(x?0:1)+'" src="'+PH[k]+'" alt="'+p.n+' รูปที่ '+(x+1)+'">'}).join('');
+ var th=p.ims.length>1?'<div class="th">'+p.ims.map(function(k,x){return '<button'+(x?'':' class="on"')+' data-g="'+x+'" aria-label="รูปที่ '+(x+1)+'"><img src="'+PH[k]+'" alt=""></button>'}).join('')+'</div>':'';
+ show('<div class="pd"><div><div class="vw" id="vw">'+(hasIm?'':'<div class="nop">興</div>')+imgs+'</div>'+th+'</div><div><div class="eb">'+p.k+'</div><h2 id="mt">'+p.n+'</h2><div id="mp"><div class="pr">'+p.pr+'</div></div><div id="mq">'+qhtml(p.q)+'</div><a class="pill" href="https://www.google.com/maps/dir/?api=1&amp;destination=13.7419631,100.5089905" target="_blank" rel="noopener" data-cta="modal_dir">นำทางไปร้านนภาพร</a><p class="av" style="margin-top:14px">มีจำหน่ายที่ร้าน · เปิดทุกวัน 07:00 – 16:00 น.</p></div></div>',t)}
 document.addEventListener('click',function(e){var c=e.target.closest('[data-cta]');if(c)(window.dataLayer=window.dataLayer||[]).push({event:'cta_click',cta:c.dataset.cta});
  var b=e.target.closest('[data-p]');if(b){openProd(+b.dataset.p,b);return}
+ var g=e.target.closest('[data-g]');if(g){Q('#vw .ph').forEach(function(im){im.style.opacity=im.dataset.i===g.dataset.g?1:0});Q('.th button').forEach(function(x){x.classList.toggle('on',x===g)});return}
  var sw=e.target.closest('[data-sw]');if(sw){var vv=curP.vars[+sw.dataset.sw];Q('#vw .ph').forEach(function(im){im.style.opacity=im.dataset.i===sw.dataset.sw?1:0});Q('.tg2 button').forEach(function(x){x.classList.toggle('on',x===sw)});$('mt').textContent=vv.n;$('mp').innerHTML=prhtml(vv);$('mq').innerHTML=qhtml(vv.q);return}
  var v=e.target.closest('[data-v]');if(v){var w=$('vw');w.classList.toggle('photo',v.dataset.v==='ph');Q('.tg2 button').forEach(function(x){x.classList.toggle('on',x===v)});return}
  if(e.target===mod||e.target.closest('#cx')){closeM();return}
