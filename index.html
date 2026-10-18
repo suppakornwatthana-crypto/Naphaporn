@@ -222,6 +222,10 @@ footer{background:var(--mar);color:#d9c3a0}footer img{background:#fff}
 .v3:before,.v3:after{display:none!important}
 .shd{bottom:7%!important;background:radial-gradient(ellipse at center,rgba(0,0,0,.5),transparent 70%)!important}
 .v3 .hint{color:#8f8173!important;font-size:.74rem;bottom:-4px}
+/* floor reflection */
+#c0{-webkit-box-reflect:below -28% linear-gradient(to bottom,transparent 62%,rgba(255,255,255,.26))}
+.v3 .hint{bottom:-70px!important}.shd{display:none!important}
+@media(max-width:900px){#c0{-webkit-box-reflect:below 0 linear-gradient(transparent,transparent)}.v3 .hint{bottom:-8px!important}}
 </style>
 </head>
 <body>
@@ -408,7 +412,7 @@ var LOGO3D=function(canvas,src){
  var tex=gl.createTexture(),ready=false,asp=1,img=new Image();
  img.onload=function(){gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);gl.generateMipmap(gl.TEXTURE_2D);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR_MIPMAP_LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);asp=img.width/img.height;ready=true};img.src=src;
  gl.enable(gl.DEPTH_TEST);gl.clearColor(0,0,0,0);
- var ry=0,vy=0,drag=false,lx=0,t0=performance.now(),run=false,raf=0,vis=true,hx=0,hy=0,dead=false,N=22,D=.14;
+ var ry=0,vy=0,drag=false,lx=0,t0=performance.now(),run=false,raf=0,vis=true,hx=0,hy=0,dead=false,N=30,D=.2;
  function mat(ay,ax,sc,aspR,ty){var cy=Math.cos(ay),sy=Math.sin(ay),cx=Math.cos(ax),sx=Math.sin(ax),p=.16;
   // rotate Y then X, scale, simple perspective on z
   var m=[cy*sc,sy*sx*sc,-sy*cx*sc,-sy*cx*p*sc,0,cx*sc*aspR,sx*sc*aspR,sx*p*sc*aspR,sy*sc,-cy*sx*sc,cy*cx*sc,cy*cx*p*sc,0,ty,0,1];
